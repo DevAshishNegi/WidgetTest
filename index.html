@@ -5,50 +5,98 @@
     <script src="jquery-3.3.1.min.js"></script>
     <script src="script.js"></script>
     <style>
+        body {
+            background: black;
+            font-family: sans-serif;
+        }
+
         .heading {
-            font-size: 45px;
+            font-size: 55px;
             margin-bottom: 21px;
+            color: white;
+            font-family: sans-serif;
+            margin-top: 28px;
         }
-        .lang-dd{
-            margin-right: 16px;
+
+        .lang-dd {
+            margin-right: 4px;
         }
-        .lang-section{
+
+        .lang-section {
             display: flex;
         }
-        #lang-selector{
-            height: 26px;
+
+        #lang-selector {
+            height: 41px;
+            width: 700px;
         }
-        #btn-go{
-            height: 26px;
+
+        #btn-go {
+            height: 41px;
+            border-radius: 20px;
+            background: #2172ba;
+            width: 41px;
+            text-align: center;
+            line-height: 41px;
+            cursor: pointer;
         }
-        .lang-section{
-            margin-bottom: 21px;
+
+        .lang-section {
+            margin-bottom: 48px;
+        }
+
+        i {
+            border: solid whitesmoke;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 4px;
+            margin-left: -4px;
+        }
+
+        .right {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+
+        #widget-iframe {
+            border: 0;
+        }
+
+        .container {
+            width: 746px;
+            margin: auto;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
-    <div class="heading">Booking Widget Test</div>
-    <div class="lang-section">
-        <div class="lang-dd">
+    <div class="container">
+        <div class="heading">Booking Widget Test</div>
+        <div class="lang-section">
+            <div class="lang-dd">
                 <select id="lang-selector">
-                        <option value="en/us">English</option>
-                        <option value="de/de">Deutsch</option>
-                        <option value="es/us">Español</option>
-                        <option value="fr/ca">Français</option>
-                        <option value="ja/jp">Japanese</option>
-                        <option value="ko/kr">Korean</option>
-                        <option value="pt/pt">Português</option>
-                        <option value="zh-CN/cn">China-Chinese</option>
-                        <option value="zh-HK/hk">HongKong-Chinese</option>
-                    </select>
+                    <option value="en/us">English</option>
+                    <option value="de/de">Deutsch</option>
+                    <option value="es/us">Español</option>
+                    <option value="fr/ca">Français</option>
+                    <option value="ja/jp">Japanese</option>
+                    <option value="ko/kr">Korean</option>
+                    <option value="pt/pt">Português</option>
+                    <option value="zh-CN/cn">China-Chinese</option>
+                    <option value="zh-HK/hk">HongKong-Chinese</option>
+                </select>
+            </div>
+            <div class="btn-go-container">
+                <!-- <input id="btn-go" type="button" value="Go" /> -->
+                <div id="btn-go">
+                    <i class="arrow right"></i>
+                </div>
+            </div>
         </div>
-        <div class="btn-go-container">
-            <input id="btn-go" type="button" value="Go"/>
+        <div class="widget-container">
+            <iframe id="widget-iframe" height="375" width="380" src="https://qa7.united.com/ual/en/us/widget/bookingwidget" scrolling="no"></iframe>
         </div>
-    </div>
-    <div class="widget-container">
-        <iframe id="widget-iframe" height="375" width="380" frameborder="1" src="https://qa7.united.com/ual/en/us/widget/bookingwidget" scrolling="no"></iframe>
     </div>
 </body>
 
