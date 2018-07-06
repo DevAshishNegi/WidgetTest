@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="script.js"></script>
+    <style>
+        .heading {
+            font-size: 45px;
+            margin-bottom: 21px;
+        }
+        .lang-dd{
+            margin-right: 16px;
+        }
+        .lang-section{
+            display: flex;
+        }
+        #lang-selector{
+            height: 26px;
+        }
+        .btn-go input{
+            height: 26px;
+        }
+        .lang-section{
+            margin-bottom: 21px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="heading">Booking Widget Test</div>
+    <div class="lang-section">
+        <div class="lang-dd">
+                <select id="lang-selector">
+                        <option value="en/us">English</option>
+                        <option value="de/de">Deutsch</option>
+                        <option value="es/us">Español</option>
+                        <option value="fr/ca">Français</option>
+                        <option value="ja/jp">Japanese</option>
+                        <option value="ko/kr">Korean</option>
+                        <option value="pt/pt">Português</option>
+                        <option value="zh-CN/cn">China-Chinese</option>
+                        <option value="zh-HK/hk">HongKong-Chinese</option>
+                    </select>
+        </div>
+        <div class="btn-go-container">
+            <input id="btn-go" type="button" value="Go"/>
+        </div>
+    </div>
+    <div class="widget-container">
+        <iframe id="widget-iframe" height="375" width="380" frameborder="1" src="https://qa7.united.com/ual/en/us/widget/bookingwidget" scrolling="no"></iframe>
+    </div>
+</body>
+
+</html>
