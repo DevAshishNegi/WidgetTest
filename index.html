@@ -10,6 +10,10 @@
             font-family: sans-serif;
         }
 
+        label {
+            color: #b3b2b2;
+        }
+
         .heading {
             font-size: 55px;
             margin-bottom: 21px;
@@ -18,21 +22,50 @@
             margin-top: 28px;
         }
 
+        .main {
+            display: flex;
+            justify-content: space-between;
+        }
+
         .lang-dd {
             margin-right: 4px;
         }
 
-        .lang-section {
+        .control-section {
             display: flex;
+            flex-direction: column;
         }
 
-        #lang-selector {
+        .row {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 65px;
+            margin-bottom: 20px;
+        }
+
+        .html-control {
             height: 41px;
             width: 700px;
             font-size: 24px;
         }
 
-        #btn-go {
+        /* #lang-selector {
+            height: 41px;
+            width: 700px;
+            font-size: 24px;
+        } */
+
+        .btn-submit {
+            background: #2172ba;
+            cursor: pointer;
+            text-align: center;
+            border: 0;
+            color: white;
+            margin-top: 17px;
+        }
+
+        .btn-go-circle {
             height: 41px;
             border-radius: 20px;
             background: #2172ba;
@@ -42,7 +75,7 @@
             cursor: pointer;
         }
 
-        .lang-section {
+        .control-section {
             margin-bottom: 48px;
         }
 
@@ -64,40 +97,76 @@
         }
 
         .container {
-            width: 746px;
-            margin: auto;
-            text-align: center;
+            /* width: 746px; */
+            margin: 0 100px;
+            /* text-align: center; */
+        }
+
+        .widget-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 889px;
+            border: 1px white solid;
+            margin: 18px 0;
+            height: 875px;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="heading">Booking Widget Test</div>
-        <div class="lang-section">
-            <div class="lang-dd">
-                <select id="lang-selector">
-                    <option value="en/us">English</option>
-                    <option value="de/de">Deutsch</option>
-                    <option value="es/us">Español</option>
-                    <option value="fr/ca">Français</option>
-                    <option value="ja/jp">Japanese</option>
-                    <option value="ko/kr">Korean</option>
-                    <option value="pt/pt">Português</option>
-                    <option value="zh-CN/cn">China-Chinese</option>
-                    <option value="zh-HK/hk">HongKong-Chinese</option>
-                </select>
-            </div>
-            <div class="btn-go-container">
-                <!-- <input id="btn-go" type="button" value="Go" /> -->
-                <div id="btn-go">
-                    <i class="arrow right"></i>
+
+        <div class="main">
+            <div class="control-section">
+                <div class="heading">Booking Widget Test</div>
+                <div class="row">
+                    <label>Language</label>
+                    <select id="lang-selector" class="html-control">
+                        <option value="en/us">English</option>
+                        <option value="de/de">Deutsch</option>
+                        <option value="es/us">Español</option>
+                        <option value="fr/ca">Français</option>
+                        <option value="ja/jp">Japanese</option>
+                        <option value="ko/kr">Korean</option>
+                        <option value="pt/pt">Português</option>
+                        <option value="zh-CN/cn">China-Chinese</option>
+                        <option value="zh-HK/hk">HongKong-Chinese</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label>Version</label>
+                    <select id="version-selector" class="html-control">
+                        <option value="">Version 1</option>
+                        <option value="?version=2">Version 2</option>
+                        <option value="?version=3">Version 3</option>
+                    </select>
+                </div>
+                <div class="row">
+                    <label>Environment</label>
+                    <select id="environment-selector" class="html-control">
+                        <option value="https://qa7.united.com/shopping/ual/">Shopping</option>
+                        <option value="https://dev2.united.com/ual/">Shopping2</option>
+                        <option value="https://qa7.united.com/ual/">QA</option>
+                        <option value="https://integration.united.com/ual/">Integration</option>
+                        <option value="https://preprod.united.com/ual/">Preprod</option>
+                        <option value="https://preview.united.com/ual/">Preview</option>
+                        <option value="https://www.united.com/ual/">Production</option>
+                    </select>
+                </div>
+                <div class="btn-go-container">
+                    <input id="btn-go" class="html-control btn-submit" type="button" value="Go" />
+                    <!-- <div id="btn-go" class="btn-go-circle">
+                        <i class="arrow right"></i>
+                    </div> -->
                 </div>
             </div>
+            <div class="widget-container">
+                <iframe id="widget-iframe" height="375" width="380" src="https://qa7.united.com/shopping/ual/en/us/widget/bookingwidget"
+                        scrolling="no"></iframe>
+            </div>
         </div>
-        <div class="widget-container">
-            <iframe id="widget-iframe" height="375" width="380" src="https://qa7.united.com/ual/en/us/widget/bookingwidget" scrolling="no"></iframe>
-        </div>
+
     </div>
 </body>
 
