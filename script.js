@@ -11,7 +11,7 @@ $(document).ready(function () {
                 $("#widget-iframe").width(776);
                 break;
             case "?version=3":
-                $("#widget-iframe").height(822);
+                $("#widget-iframe").height(775);
                 $("#widget-iframe").width(300);
                 break;
             default:
