@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $("#btn-go").click(function () {
-        var url = $('#environment-selector').val() + $('#lang-selector').val() + "/widget/bookingwidget" + $('#version-selector').val();
+        var url = $('#environment-selector').val() + $('#lang-selector').val() + "/widget/bookingwidget" + $('#version-selector').val() + "&showUnitedLogo=false";
         switch ($('#version-selector').val()) {
             case "?version=1":
                 $("#widget-iframe").height(375);
