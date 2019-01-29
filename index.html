@@ -46,7 +46,7 @@
 
         .html-control {
             height: 41px;
-            width: 700px;
+            width: 505px;
             font-size: 24px;
         }
 
@@ -77,6 +77,7 @@
 
         .control-section {
             margin-bottom: 48px;
+			margin-right: 21px;
         }
 
         i {
@@ -109,7 +110,7 @@
             width: 889px;
             border: 1px white solid;
             margin: 18px 0;
-            height: 875px;
+            min-height: 664px;
         }
     </style>
 </head>
@@ -136,10 +137,17 @@
                 </div>
                 <div class="row">
                     <label>Version</label>
-                    <select id="version-selector" class="html-control">
+                    <select id="version-selector" class="html-control" onchange="logoFunction(this.value);">
                         <option value="">Version 1</option>
                         <option value="?version=2">Version 2</option>
                         <option value="?version=3">Version 3</option>
+                    </select>
+                </div>
+                <div id="logo-section" class="row" style="display:none">
+                    <label>United logo</label><br />
+                    <select id="logo-option" class="html-control">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
                     </select>
                 </div>
                 <div class="row">
